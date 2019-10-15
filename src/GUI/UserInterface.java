@@ -74,6 +74,7 @@ public class UserInterface implements Runnable{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame_db.setVisible(false);
+                https://github.com/Manero88/VAT-Prof.git
             }
         });
 
