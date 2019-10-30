@@ -1,31 +1,37 @@
 package ApplicationLogic;
 
-public class Cuboid implements Shape {
-    private final String name;
-    private final double height, length, width, volume;
+import Controller.Shape;
+
+public class Cuboid extends Vorm implements Shape {
+
+    private final double height, length, width;
 
 
-    public Cuboid(String name, double height, double length, double width){
-
-        this.name = name;
+    public Cuboid(double height, double length, double width){
+        this.name = "Cuboid";
         this.height = height;
         this.length = length;
         this.width = width;
 
-        this.volume = length * height * width;
+        this.volume = calculateVolume();
 
     }
 
 
     @Override
-    public String getName() {
-        return name;
-
+    public double calculateVolume() {
+        return this.length * this.height * this.width;
     }
 
     @Override
-    public double getVolume() {
+    public String printInfo() {
+        return "       Type: " + name + " h: " + height + " l: " + length + " w: " + width + " Volume = " + volume;
+    }
+
+    @Override
+    public double getVolume(){
         return volume;
     }
+
 }
 
