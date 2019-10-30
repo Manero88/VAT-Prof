@@ -1,20 +1,26 @@
 package ApplicationLogic;
 
-public class Cone implements Shape{
-    private String name;
-    private double radius, heigth, volume;
+import Controller.Shape;
 
-    public Cone(String name, double radius, double heigth) {
-        this.name = name;
+public class Cone extends Vorm implements Shape {
+    private double radius, heigth;
+
+    public Cone(double radius, double heigth) {
+        this.name = "Cone";
         this.radius = radius;
         this.heigth = heigth;
 
-        this.volume = (1.0 / 3.0) * Math.PI * Math.pow(radius,2.0) * heigth;
+        this.volume = calculateVolume();
     }
 
     @Override
-    public String getName() {
-        return name;
+    public double calculateVolume() {
+        return (1.0 / 3.0) * Math.PI * Math.pow(this.radius, 2.0) * this.heigth;
+    }
+
+    @Override
+    public String printInfo() {
+        return "       Type: " + name + " r: " + radius + " h: " + heigth + " Volume = " + volume;
     }
 
     @Override
